@@ -10,13 +10,15 @@ addInput.addEventListener('change', (event) => {
 addInput.addEventListener('keydown', handleEvent);
 
 function handleEvent(event) {
-  if (event.key == 'Enter') {
+  if (event.key == 'Enter' && this.value) {
     createElement(this.value);
   }
 }
 
 addButton.addEventListener('click', () => {
-  createElement(content);
+  if (content) {
+    createElement(content);
+  }
 });
 
 function createElement(text) {
